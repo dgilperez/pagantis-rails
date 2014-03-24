@@ -1,4 +1,5 @@
 require "pagantis-rails/version"
+require "pagantis-rails/helper"
 
 module Pagantis
   module Rails
