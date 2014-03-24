@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Pagantis::Rails::Helper
+### Pagantis::Rails::Helper
 
 Using this helper you can easily create a form of any flavour in Railsy
 environments. 
