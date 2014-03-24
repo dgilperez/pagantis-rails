@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pagantis/rails/version'
+require 'pagantis-rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pagantis-rails"
   spec.version       = Pagantis::Rails::VERSION
   spec.authors       = ["David Gil"]
   spec.email         = ["dgilperez@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Rails wrapper for pagantis-ruby library.}
+  spec.summary       = %q{Pagantis API On Rails}
   spec.homepage      = ""
   spec.license       = "MIT"
 
