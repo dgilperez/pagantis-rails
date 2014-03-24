@@ -18,6 +18,7 @@ module Pagantis
     #     = f.text_field :ok_url
     #     = f.text_field :nok_url
     #     = f.submit 'Pay'
+    #
     class Helper
       attr_reader :operation, :order_id, :auth_method, :amount, :currency, :description,
         :ok_url, :nok_url, :account_id, :signature
