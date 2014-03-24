@@ -1,6 +1,6 @@
 # Pagantis::Rails
 
-Rails wrapper for pagantis-ruby library
+Rails wrapper for [pagantis-ruby](http://github.com/pagantis/pagantis-ruby) library.
 
 ## Installation
 
