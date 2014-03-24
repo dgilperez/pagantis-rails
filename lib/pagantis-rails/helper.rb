@@ -6,7 +6,7 @@ module Pagantis
     # Example:
     #
     #   - helper = Pagantis::Helper.new(args ...)
-    #   = form_for helper, url: "https://psp.pagantis.com/2/sale", method: "post" do |f|
+    #   = form_for helper, as: :helper, url: "https://psp.pagantis.com/2/sale", method: "post" do |f|
     #     = f.hidden_field :operation
     #     = f.hidden_field :account_id
     #     = f.hidden_field :signature
@@ -47,7 +47,7 @@ module Pagantis
       end
 
       def signature
-        str = @account_id + @order_id+ @amount + @currency + auth_method + @ok_url + @nok_url
+        str = @account_id + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
         Digest::SHA1.hexdigest str
       end
 
