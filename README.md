@@ -18,7 +18,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Pagantis::Rails::Helper
+
+Using this helper you can easily create a form of any flavour in Railsy
+environments. 
+
+In the example we are using Rails and HAML: 
+
+    - helper = Pagantis::Helper.new(args ...)
+
+    = form_for helper, as: :helper, url: "https://psp.pagantis.com/2/sale", method: "post" do |f|
+      = f.hidden_field :operation
+      = f.hidden_field :account_id
+      = f.hidden_field :signature
+      = f.text_field :order_id
+      = f.text_field :auth_method
+      = f.text_field :amount
+      = f.text_field :currency
+      = f.text_field :description
+      = f.text_field :ok_url
+      = f.text_field :nok_url
+      = f.submit 'Pay'
 
 ## Contributing
 
