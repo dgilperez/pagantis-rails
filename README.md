@@ -1,6 +1,6 @@
 # Pagantis::Rails
 
-TODO: Write a gem description
+Rails wrapper for pagantis-ruby library
 
 ## Installation
 
