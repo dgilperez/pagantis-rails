@@ -1,5 +1,3 @@
-require 'pagantis-ruby'
-
 require "pagantis-rails/version"
 require "pagantis-rails/helper"
 
