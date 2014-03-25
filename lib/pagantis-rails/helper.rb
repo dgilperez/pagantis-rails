@@ -24,18 +24,19 @@ module Pagantis
         :ok_url, :nok_url, :account_id, :signature
 
       def initialize(args = {})
-        @operation    = args.fetch(:operation) { nil } # empty operation equals single charge
-        @order_id     = args.fetch(:order_id)
-        @amount       = args.fetch(:amount)
-        @currency     = parse_currency args.fetch(:currency)
-        @description  = args.fetch(:description) { "" }
-        @ok_url       = args.fetch(:ok_url)
-        @nok_url      = args.fetch(:nok_url)
-        @account_id   = args.fetch(:account_id)
+        @operation   = args.fetch(:operation) { nil } # empty operation equals single charge
+        @order_id    = args.fetch(:order_id)
+        @amount      = args.fetch(:amount)
+        @currency    = parse_currency args.fetch(:currency)
+        @description = args.fetch(:description) { "" }
+        @ok_url      = args.fetch(:ok_url)
+        @nok_url     = args.fetch(:nok_url)
+        @account_id  = args.fetch(:account_id)
+        @secret      = args.fetch(:secret)
 
         if subscription?
-          @plan_id    = args.fetch(:plan_id)
-          @user_id    = args.fetch(:user_id)
+          @plan_id   = args.fetch(:plan_id)
+          @user_id   = args.fetch(:user_id)
         end
       end
 
@@ -48,7 +49,7 @@ module Pagantis
       end
 
       def signature
-        str = @account_id.to_s + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
+        str = @secret + @account_id.to_s + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
         Digest::SHA1.hexdigest str
       end
 
