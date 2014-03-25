@@ -40,10 +40,6 @@ module Pagantis
         end
       end
 
-      def self.gateway_url
-        "https://psp.pagantis.com/2/sale"
-      end
-
       def subscription?
         @operation == "SUBSCRIPTION"
       end
@@ -55,6 +51,10 @@ module Pagantis
       def signature
         str = @secret + @account_id.to_s + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
         Digest::SHA1.hexdigest str
+      end
+
+      def gateway_url
+        "https://psp.pagantis.com/2/sale"
       end
 
       private
