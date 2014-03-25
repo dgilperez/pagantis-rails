@@ -48,7 +48,7 @@ module Pagantis
       end
 
       def signature
-        str = @account_id + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
+        str = @account_id.to_s + @order_id + @amount.to_s + @currency + auth_method + @ok_url + @nok_url
         Digest::SHA1.hexdigest str
       end
 
