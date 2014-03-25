@@ -53,6 +53,10 @@ module Pagantis
         Digest::SHA1.hexdigest str
       end
 
+      def gateway_url
+        "https://psp.pagantis.com/2/sale"
+      end
+
       private
 
       def parse_currency(currency)
