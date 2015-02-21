@@ -17,13 +17,15 @@ module Pagantis
     #     = f.text_field :description
     #     = f.text_field :ok_url
     #     = f.text_field :nok_url
-    #     = f.text_field :plan_id # subscription-only
-    #     = f.text_field :user_id # subscription-only
+    #     = f.text_field :plan_id    # subscription-only
+    #     = f.text_field :user_id    # subscription-only
+    #     = f.text_field :user_name  # subscription-only
+    #     = f.text_field :user_email # subscription-only
     #     = f.submit 'Pay'
     #
     class Helper
       attr_reader :operation, :order_id, :auth_method, :amount, :currency, :description,
-        :ok_url, :nok_url, :account_id, :signature, :plan_id, :user_id
+        :ok_url, :nok_url, :account_id, :signature, :plan_id, :user_id, :user_email, :user_name
 
       def initialize(args = {})
         @operation   = args.fetch(:operation) { nil } # empty operation equals single charge
@@ -37,8 +39,10 @@ module Pagantis
         @secret      = args.fetch(:secret)
 
         if subscription?
-          @plan_id   = args.fetch(:plan_id)
-          @user_id   = args.fetch(:user_id)
+          @plan_id    = args.fetch(:plan_id)
+          @user_id    = args.fetch(:user_id)
+          @user_email = args.fetch(:user_email)
+          @user_name  = args.fetch(:user_name)
         end
       end
 
