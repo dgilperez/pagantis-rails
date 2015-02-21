@@ -41,8 +41,8 @@ module Pagantis
         if subscription?
           @plan_id    = args.fetch(:plan_id)
           @user_id    = args.fetch(:user_id)
-          @user_email = args.fetch(:user_email)
-          @user_name  = args.fetch(:user_name)
+          @user_email = args.fetch(:user_email) {}
+          @user_name  = args.fetch(:user_name) {}
         end
       end
 
