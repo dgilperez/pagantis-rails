@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    pagantis-rails (0.0.3)
+    pagantis-rails (0.0.4)
 
 GEM
   remote: https://rubygems.org/
